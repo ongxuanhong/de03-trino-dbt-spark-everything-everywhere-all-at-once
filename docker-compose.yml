@@ -2,6 +2,18 @@ version: "3.9"
 
 services:
 
+  de_mysql:
+    image: mysql:8.0
+    container_name: de_mysql
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    env_file:
+      - env
+    networks:
+      - kyuubi_network
+      
   apache_kyuubi:
     image: apache/kyuubi:master-snapshot
     container_name: apache_kyuubi
