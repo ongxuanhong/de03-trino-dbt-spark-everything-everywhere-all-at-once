@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+
+  apache_kyuubi:
+    image: apache/kyuubi:master-snapshot
+    container_name: apache_kyuubi
+    ports:
+      - "10009:10009"
+      - "4040:4040"
+    networks:
+      - kyuubi_network
+
+networks:
+  kyuubi_network:
+    driver: bridge
+    name: kyuubi_network
+
