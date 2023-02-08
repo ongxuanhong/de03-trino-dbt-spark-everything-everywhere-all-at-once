@@ -10,10 +10,25 @@ services:
     ports:
       - "3306:3306"
     env_file:
-      - env
+      - .env
     networks:
       - kyuubi_network
-      
+
+  minio:
+    hostname: minio
+    image: "minio/minio"
+    container_name: minio
+    ports:
+      - "9001:9001"
+      - "9000:9000"
+    command: [ "server", "/data", "--console-address", ":9001" ]
+    volumes:
+      - ./minio/data:/data
+    env_file:
+      - .env
+    networks:
+      - kyuubi_network
+
   apache_kyuubi:
     image: apache/kyuubi:master-snapshot
     container_name: apache_kyuubi
@@ -23,8 +38,50 @@ services:
     networks:
       - kyuubi_network
 
+  mariadb:
+    container_name: mariadb
+    image: "mariadb"
+    hostname: mariadb
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: metastore_db
+    volumes:
+      - ./mariadb:/var/lib/mysql
+    networks:
+      - kyuubi_network
+
+  hive-metastore:
+    container_name: hive-metastore
+    hostname: hive-metastore
+    image: "bitsondatadev/hive-metastore"
+    ports:
+      - "9083:9083"
+    volumes:
+      - ./hive-metastore/metastore-site.xml:/opt/apache-hive-metastore-3.0.0-bin/conf/metastore-site.xml:ro
+    environment:
+      METASTORE_DB_HOSTNAME: mariadb
+    networks:
+      - kyuubi_network
+    depends_on:
+      - mariadb
+      - minio
+
+  trino:
+    container_name: trino
+    image: "trinodb/trino"
+    hostname: trino
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./trino:/etc/trino
+    networks:
+      - kyuubi_network
+
 networks:
   kyuubi_network:
     driver: bridge
     name: kyuubi_network
-
