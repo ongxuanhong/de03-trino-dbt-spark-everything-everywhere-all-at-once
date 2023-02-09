@@ -38,7 +38,8 @@ services:
       - "10009:10009"
       - "4040:4040"
     volumes:
-      - ./kyuubi/spark-defaults.conf:/opt/kyuubi/externals/spark-3.3.1-bin-hadoop3/spark-defaults.conf      
+      - ./kyuubi/spark-defaults.conf:/opt/kyuubi/externals/spark-3.3.1-bin-hadoop3/conf/spark-defaults.conf
+      - ./kyuubi/hive-site.xml:/opt/kyuubi/externals/spark-3.3.1-bin-hadoop3/conf/hive-site.xml
     env_file:
       - .env
     networks:
