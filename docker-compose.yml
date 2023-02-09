@@ -3,7 +3,7 @@ version: "3.9"
 services:
 
   de_mysql:
-    image: mysql:8.0
+    image: "mariadb"
     container_name: de_mysql
     volumes:
       - ./mysql:/var/lib/mysql
@@ -38,22 +38,6 @@ services:
     networks:
       - kyuubi_network
 
-  mariadb:
-    container_name: mariadb
-    image: "mariadb"
-    hostname: mariadb
-    ports:
-      - "3307:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: admin
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: admin
-      MYSQL_DATABASE: metastore_db
-    volumes:
-      - ./mariadb:/var/lib/mysql
-    networks:
-      - kyuubi_network
-
   hive-metastore:
     container_name: hive-metastore
     hostname: hive-metastore
@@ -63,11 +47,11 @@ services:
     volumes:
       - ./hive-metastore/metastore-site.xml:/opt/apache-hive-metastore-3.0.0-bin/conf/metastore-site.xml:ro
     environment:
-      METASTORE_DB_HOSTNAME: mariadb
+      METASTORE_DB_HOSTNAME: de_mysql
     networks:
       - kyuubi_network
     depends_on:
-      - mariadb
+      - de_mysql
       - minio
 
   trino:

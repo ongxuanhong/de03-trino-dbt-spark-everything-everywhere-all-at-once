@@ -7,7 +7,7 @@ jdbc:hive2://localhost:10009/default;#spark.sql.shuffle.partitions=2;spark.execu
 
 ## Prepare MySQL data
 
-```bash
+```sql
 # copy CSV data to mysql container
 # cd path/to/brazilian-ecommerce/
 docker cp brazilian-ecommerce/ de_mysql:/tmp/
@@ -15,6 +15,9 @@ docker cp mysql_schemas.sql de_mysql:/tmp/
 
 # login to mysql server as root
 make to_mysql_root
+CREATE DATABASE brazillian_ecommerce;
+USE brazillian_ecommerce;
+GRANT ALL PRIVILEGES ON *.* TO admin;
 SHOW GLOBAL VARIABLES LIKE 'LOCAL_INFILE';
 SET GLOBAL LOCAL_INFILE=TRUE;
 # exit
@@ -36,4 +39,17 @@ SELECT * FROM olist_order_payments_dataset LIMIT 10;
 SELECT * FROM olist_orders_dataset LIMIT 10;
 SELECT * FROM olist_products_dataset LIMIT 10;
 SELECT * FROM product_category_name_translation LIMIT 10;
+```
+
+# Test delta-table
+```sql
+SHOW catalogs;
+
+SHOW SCHEMAS FROM delta;
+
+CREATE SCHEMA IF NOT EXISTS delta.bronze WITH (location='s3a://warehouse/bronze');
+DROP table if EXISTS delta.bronze.mytable;
+CREATE TABLE delta.bronze.mytable (name varchar, id integer);
+INSERT INTO delta.bronze.mytable VALUES ( 'John', 1), ('Jane', 2);
+SELECT * FROM delta.bronze.mytable;
 ```
