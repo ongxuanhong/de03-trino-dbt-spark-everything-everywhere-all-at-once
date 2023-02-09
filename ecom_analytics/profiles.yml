@@ -3,13 +3,9 @@ trino:
   outputs:
     dev:
       type: trino
-      user: trino
+      user: admin
       host: localhost
       port: 8080
       database: warehouse
       schema: bronze
       threads: 1
-      http_scheme: http
-      session_properties:
-        query_max_run_time: 5d
-        exchange_compression: True

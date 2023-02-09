@@ -1,5 +1,5 @@
-analyticsrun:
-	dbt run --profiles-dir ./
+run:
+	dbt run --profiles-dir ./ --full-refresh
 
 seed:
 	dbt seed --profiles-dir ./ --full-refresh
