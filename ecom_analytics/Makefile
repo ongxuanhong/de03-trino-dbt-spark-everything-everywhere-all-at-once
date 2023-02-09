@@ -1,4 +1,4 @@
-run:
+bronze:
 	dbt run --profiles-dir ./ --full-refresh
 
 seed:
