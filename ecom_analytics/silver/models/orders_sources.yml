@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: default
+    tables:
+      - name: external_products
+        external:
+          location: 's3a://warehouse/bronze/olist_products'
+          using: delta
+        columns:
+          - name: product_id
+            data_type: string
+          - name: product_category_name
+            data_type: string
+          - name: product_name_lenght
+            data_type: int
+          - name: product_description_lenght
+            data_type: int
+          - name: product_photos_qty
+            data_type: int
+          - name: product_weight_g
+            data_type: int
+          - name: product_length_cm
+            data_type: int
+          - name: product_height_cm
+            data_type: int
+          - name: product_width_cm
+            data_type: int

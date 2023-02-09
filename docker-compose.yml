@@ -39,6 +39,8 @@ services:
       - "4040:4040"
     volumes:
       - ./kyuubi/spark-defaults.conf:/opt/kyuubi/externals/spark-3.3.1-bin-hadoop3/spark-defaults.conf      
+    env_file:
+      - .env
     networks:
       - kyuubi_network
 

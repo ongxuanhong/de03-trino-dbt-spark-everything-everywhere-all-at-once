@@ -130,4 +130,6 @@ dmypy.json
 mysql/
 brazilian-ecommerce/
 minio/
-mariadb/SELECT * FROM olist_order_payments_dataset LIMIT 10;
+mariadb/
+dbt_packages/
+logs/

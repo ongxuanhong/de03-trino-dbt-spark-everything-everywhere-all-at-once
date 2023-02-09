@@ -99,3 +99,4 @@
 2023-02-09 04:56:43.512783 (Thread-1 (worker)): invalid escape sequence '\w'
 2023-02-09 05:02:29.383644 (MainThread): invalid escape sequence '\w'
 2023-02-09 05:02:29.580927 (MainThread): invalid escape sequence '\w'
+2023-02-09 14:45:45.873565 (MainThread): unclosed <ssl.SSLSocket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.0.2.15', 35888), raddr=('54.205.151.62', 443)>
