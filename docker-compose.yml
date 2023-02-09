@@ -29,22 +29,6 @@ services:
     networks:
       - kyuubi_network
 
-  apache_kyuubi:
-    build:
-      context: ./kyuubi
-      dockerfile: ./Dockerfile
-    container_name: apache_kyuubi
-    ports:
-      - "10009:10009"
-      - "4040:4040"
-    volumes:
-      - ./kyuubi/spark-defaults.conf:/opt/kyuubi/externals/spark-3.3.1-bin-hadoop3/conf/spark-defaults.conf
-      - ./kyuubi/hive-site.xml:/opt/kyuubi/externals/spark-3.3.1-bin-hadoop3/conf/hive-site.xml
-    env_file:
-      - .env
-    networks:
-      - kyuubi_network
-
   hive-metastore:
     container_name: hive-metastore
     hostname: hive-metastore
@@ -72,6 +56,59 @@ services:
     networks:
       - kyuubi_network
 
+  spark-master:
+    build:
+      context: ./spark
+      dockerfile: ./Dockerfile
+    container_name: "spark-master"
+    environment:
+      - SPARK_MODE=master
+      - SPARK_LOCAL_IP=spark-master
+    ports:
+      - "7077:7077"
+    volumes:
+      - ./spark/spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
+      - ./spark/hive-site.xml:/opt/bitnami/spark/conf/hive-site.xml
+    networks:
+    - kyuubi_network
+
+  spark-worker-1:
+    image: docker.io/bitnami/spark:3.3
+    container_name: "spark-worker-1"
+    env_file:
+      - .env
+    depends_on:
+      - spark-master
+    networks:
+    - kyuubi_network
+
+  spark-worker-2:
+    image: docker.io/bitnami/spark:3.3
+    container_name: "spark-worker-2"
+    env_file:
+      - .env
+    depends_on:
+      - spark-master
+    networks:
+    - kyuubi_network
+
+  spark-thrift-server:
+    build:
+      context: ./spark
+      dockerfile: ./Dockerfile
+    container_name: "spark-thrift-server"
+    depends_on:
+      - spark-master
+    ports:
+      - "4040:4040"
+      - "10000:10000"
+    command: ./sbin/start-thriftserver.sh --driver-class-path "jars/mysql-connector-java-8.0.32.jar" --master spark://spark-master:7077
+    volumes:
+      - ./spark/spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
+      - ./spark/hive-site.xml:/opt/bitnami/spark/conf/hive-site.xml
+    networks:
+    - kyuubi_network      
+        
 networks:
   kyuubi_network:
     driver: bridge
