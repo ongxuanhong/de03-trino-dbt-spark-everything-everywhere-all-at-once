@@ -45,11 +45,17 @@ SELECT * FROM product_category_name_translation LIMIT 10;
 ```sql
 SHOW catalogs;
 
-SHOW SCHEMAS FROM delta;
+SHOW SCHEMAS FROM warehouse;
 
-CREATE SCHEMA IF NOT EXISTS delta.bronze WITH (location='s3a://warehouse/bronze');
-DROP table if EXISTS delta.bronze.mytable;
-CREATE TABLE delta.bronze.mytable (name varchar, id integer);
-INSERT INTO delta.bronze.mytable VALUES ( 'John', 1), ('Jane', 2);
-SELECT * FROM delta.bronze.mytable;
+CREATE SCHEMA IF NOT EXISTS warehouse.bronze WITH (location='s3a://warehouse/bronze');
+DROP table if EXISTS warehouse.bronze.mytable;
+CREATE TABLE warehouse.bronze.mytable (name varchar, id integer);
+INSERT INTO warehouse.bronze.mytable VALUES ( 'John', 1), ('Jane', 2);
+SELECT * FROM warehouse.bronze.mytable;
+```
+
+# Run DBT
+```bash
+cd ecom_analytics
+make seed
 ```
