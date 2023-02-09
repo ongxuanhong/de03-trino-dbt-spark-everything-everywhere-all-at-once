@@ -1,0 +1,101 @@
+2023-02-09 04:11:50.426752 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:11:50.632445 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:12:29.510111 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:12:29.751858 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:12:31.001846 (Thread-1 (worker)): unclosed <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37116), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:12:33.042784 (Thread-1 (worker)): invalid escape sequence '\w'
+2023-02-09 04:15:11.770701 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:15:11.997010 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:15:34.804687 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:15:35.029489 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:15:36.753810 (Thread-1 (worker)): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 43618), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:15:36.754093 (Thread-1 (worker)): unclosed <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 43624), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:21:41.374560 (Thread-1 (worker)): invalid escape sequence '\w'
+2023-02-09 04:21:41.388781 (Thread-1 (worker)): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 45862), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:22:02.743843 (Thread-1 (worker)): invalid escape sequence '\w'
+2023-02-09 04:22:02.746365 (Thread-1 (worker)): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 56764), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:22:02.746598 (Thread-1 (worker)): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 56766), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:26:33.091270 (ThreadPoolExecutor-1_0): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 60870), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:26:33.263159 (MainThread): unclosed <socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 60886), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:28:41.952780 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:28:42.197963 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:28:43.850074 (Thread-1 (worker)): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 36396), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:28:43.850652 (Thread-1 (worker)): unclosed <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 36404), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:30:07.876905 (Thread-1 (worker)): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 47062), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:30:07.877236 (Thread-1 (worker)): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 47072), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:31:01.156498 (Thread-1 (worker)): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 34354), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:31:01.156962 (Thread-1 (worker)): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 34362), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:31:32.449736 (Thread-1 (worker)): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 51534), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:31:58.671147 (Thread-1 (worker)): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 41798), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:31:58.671521 (Thread-1 (worker)): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 41806), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:32:32.555201 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:32:32.798852 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:32:34.182634 (Thread-1 (worker)): unclosed <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 45966), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:32:34.265385 (MainThread): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 45954), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:32:34.265849 (MainThread): unclosed <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 45974), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:34:10.533182 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:34:10.765162 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:34:12.161120 (Thread-1 (worker)): unclosed <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 46746), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:34:12.239270 (MainThread): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 46736), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:34:12.243146 (MainThread): unclosed <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 46750), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:35:10.406425 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:35:10.622482 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:35:11.177069 (Thread-1 (worker)): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 54566), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:35:11.177342 (Thread-1 (worker)): unclosed <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 54574), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:35:32.697283 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:35:32.931919 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:35:34.360454 (Thread-1 (worker)): unclosed <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 55336), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:35:34.478453 (MainThread): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 55334), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:35:34.478835 (MainThread): unclosed <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 55346), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:36:12.713202 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:36:12.958863 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:36:14.277502 (Thread-1 (worker)): unclosed <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 60216), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:36:14.360654 (MainThread): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 60202), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:36:14.361041 (MainThread): unclosed <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 60230), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:37:37.493767 (MainThread): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 47438), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:37:37.494107 (MainThread): unclosed <socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 47452), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:39:04.499048 (MainThread): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 51446), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:39:04.499364 (MainThread): unclosed <socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 51454), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:40:47.384557 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:40:47.631436 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:40:48.905204 (Thread-1 (worker)): unclosed <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 43938), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:40:49.000245 (MainThread): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 43924), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:40:49.000648 (MainThread): unclosed <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 43948), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:41:05.794757 (ThreadPoolExecutor-1_0): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 57034), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:41:06.026634 (MainThread): unclosed <socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 57048), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:41:28.790231 (MainThread): unclosed <socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 41158), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:41:28.792624 (MainThread): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 41140), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:41:28.792928 (MainThread): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 41148), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:41:49.806380 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:41:50.034561 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:41:50.529549 (MainThread): unclosed <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37534), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:42:11.726956 (MainThread): unclosed <socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 44086), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:42:11.728639 (MainThread): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 44072), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:42:11.728857 (MainThread): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 44078), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:43:21.140498 (Thread-1 (worker)): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 36460), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:43:27.878836 (MainThread): unclosed <socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 36506), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:43:27.880264 (MainThread): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 36478), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:43:27.880902 (MainThread): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 36492), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:45:16.057697 (ThreadPoolExecutor-1_0): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 33008), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:45:16.987011 (MainThread): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 33016), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:45:16.987296 (MainThread): unclosed <socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 33024), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:45:45.079604 (ThreadPoolExecutor-1_0): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 55756), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:45:46.132482 (MainThread): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 55758), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:45:46.132755 (MainThread): unclosed <socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 55766), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:46:21.160324 (Thread-1 (worker)): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 59306), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:47:45.571542 (ThreadPoolExecutor-1_0): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 57232), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:47:46.547846 (MainThread): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 57246), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:47:46.548134 (MainThread): unclosed <socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 57258), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:48:15.573110 (MainThread): unclosed <socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 43584), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:48:15.574495 (MainThread): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 43566), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:48:15.574728 (MainThread): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 43580), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:48:40.042155 (Thread-1 (worker)): unclosed <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37882), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:48:40.043222 (Thread-1 (worker)): unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37898), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:49:56.210585 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:49:56.441901 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:49:56.927294 (MainThread): unclosed <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 42182), raddr=('127.0.0.1', 8080)>
+2023-02-09 04:52:40.664401 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:52:40.862365 (MainThread): invalid escape sequence '\w'
+2023-02-09 04:56:43.512783 (Thread-1 (worker)): invalid escape sequence '\w'
+2023-02-09 05:02:29.383644 (MainThread): invalid escape sequence '\w'
+2023-02-09 05:02:29.580927 (MainThread): invalid escape sequence '\w'
