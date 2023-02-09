@@ -16,7 +16,7 @@ spark:
     dev:
       type: spark
       method: thrift
-      host: spark
+      host: localhost
       port: 10009
       schema: silver
       connect_retries: 5

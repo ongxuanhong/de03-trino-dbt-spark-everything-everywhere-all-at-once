@@ -30,11 +30,15 @@ services:
       - kyuubi_network
 
   apache_kyuubi:
-    image: apache/kyuubi:master-snapshot
+    build:
+      context: ./kyuubi
+      dockerfile: ./Dockerfile
     container_name: apache_kyuubi
     ports:
       - "10009:10009"
       - "4040:4040"
+    volumes:
+      - ./kyuubi/spark-defaults.conf:/opt/kyuubi/externals/spark-3.3.1-bin-hadoop3/spark-defaults.conf      
     networks:
       - kyuubi_network
 

@@ -34,6 +34,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   silver:
     +materialized: incremental
-    +incremental_strategy: delete+insert
+    +incremental_strategy: merge
     +file_format: delta
     +location_root: s3a://warehouse/silver
