@@ -72,3 +72,6 @@ jdbc:hive2://localhost:10009/default;#spark.sql.shuffle.partitions=2;spark.execu
 
 jdbc:hive2://localhost:10009/warehouse;#spark.sql.shuffle.partitions=2;spark.executor.memory=5g;spark.dynamicAllocation.enabled=true;spark.dynamicAllocation.minExecutors=2;spark.dynamicAllocation.initialExecutors=2;spark.executor.instances=2
 ```
+
+# Trouble shooting
+- https://kb.databricks.com/en_US/metastore/hive-metastore-troubleshooting
