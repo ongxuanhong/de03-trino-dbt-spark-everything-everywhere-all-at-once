@@ -1,50 +1,38 @@
 <configuration>
     <property>
-        <name>javax.jdo.option.ConnectionDriverName</name>
-        <value>com.mysql.cj.jdbc.Driver</value>
+        <name>hive.metastore.uris</name>
+        <value>thrift://hive-metastore:9083</value>
     </property>
     <property>
-        <name>javax.jdo.option.ConnectionURL</name>
-        <value>jdbc:mysql://de_mysql:3306/metastore_db</value>
-    </property>    
-    <property>
-        <name>javax.jdo.option.ConnectionUserName</name>
-        <value>admin</value>
-    </property>
-    <property>
-        <name>javax.jdo.option.ConnectionPassword</name>
-        <value>admin</value>
-    </property>
-    <property>
-        <name>fs.s3a.access.key</name>
+        <name>hive.s3.aws-access-key</name>
         <value>minio</value>
     </property>
     <property>
-        <name>fs.s3a.secret.key</name>
+        <name>hive.s3.aws-secret-key</name>
         <value>minio123</value>
     </property>
     <property>
-        <name>fs.s3a.endpoint</name>
+        <name>hive.s3.endpoint</name>
         <value>http://minio:9000</value>
     </property>
     <property>
-        <name>fs.s3a.path.style.access</name>
+        <name>hive.s3.path-style-access</name>
         <value>true</value>
     </property>
     <property>
-        <name>fs.s3a.connection.ssl.enabled</name>
+        <name>hive.s3.connection.ssl.enabled</name>
         <value>false</value>
     </property>
-   <property>
-     <name>hive.metastore.warehouse.dir</name>
-     <value>s3a://warehouse</value>
-   </property>
-   <property>
-     <name>hive.metastore.schema.verification</name>
-     <value>false</value>
-   </property>
-   <property>
-     <name>hive.metastore.schema.verification.record.version</name>
-     <value>false</value>
-   </property>
+    <property>
+        <name>hive.metastore.warehouse.dir</name>
+        <value>s3a://warehouse</value>
+    </property>
+    <property>
+        <name>hive.metastore.schema.verification</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>hive.metastore.schema.verification.record.version</name>
+        <value>false</value>
+    </property>
 </configuration>

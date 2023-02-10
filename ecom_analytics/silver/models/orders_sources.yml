@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: default
+  - name: silver
     tables:
       - name: external_products
         external:

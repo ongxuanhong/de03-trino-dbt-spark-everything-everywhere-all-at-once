@@ -1,2 +1,2 @@
 SELECT *
-FROM {{ source('default', 'external_products') }}
+FROM {{ source('silver', 'external_products') }}
