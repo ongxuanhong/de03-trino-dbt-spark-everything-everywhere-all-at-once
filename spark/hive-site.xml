@@ -1,26 +1,26 @@
 <configuration>
     <property>
-        <name>hive.metastore.uris</name>
+        <name>hive.server2.thrift.http.path</name>
         <value>thrift://hive-metastore:9083</value>
     </property>
     <property>
-        <name>hive.s3.aws-access-key</name>
+        <name>fs.s3a.access.key</name>
         <value>minio</value>
     </property>
     <property>
-        <name>hive.s3.aws-secret-key</name>
+        <name>fs.s3a.secret.key</name>
         <value>minio123</value>
     </property>
     <property>
-        <name>hive.s3.endpoint</name>
+        <name>fs.s3a.endpoint</name>
         <value>http://minio:9000</value>
     </property>
     <property>
-        <name>hive.s3.path-style-access</name>
+        <name>fs.s3a.path.style.access</name>
         <value>true</value>
     </property>
     <property>
-        <name>hive.s3.connection.ssl.enabled</name>
+        <name>fs.s3a.connection.ssl.enabled</name>
         <value>false</value>
     </property>
     <property>
