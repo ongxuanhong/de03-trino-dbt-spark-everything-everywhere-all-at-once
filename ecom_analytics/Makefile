@@ -4,6 +4,9 @@ run_bronze:
 run_silver:
 	dbt run --project-dir ./silver --profiles-dir ./ --full-refresh
 
+run_gold:
+	dbt run --project-dir ./gold --profiles-dir ./ --full-refresh
+
 run_external:
 	dbt run-operation --project-dir ./silver stage_external_sources
 
