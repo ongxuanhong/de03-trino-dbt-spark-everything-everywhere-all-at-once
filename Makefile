@@ -18,3 +18,6 @@ to_mysql:
 to_mysql_root:
 	docker exec -it de_mysql mysql -u"root" -p"${MYSQL_ROOT_PASSWORD}"
 
+to_psql:
+	docker exec -ti de_psql psql postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
+

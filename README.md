@@ -66,7 +66,8 @@ make run_bronze
 make run_external
 make run_silver
 
-make gold
+make to_psql
+create database ecom_analytics;
 ```
 
 # Spark thrift

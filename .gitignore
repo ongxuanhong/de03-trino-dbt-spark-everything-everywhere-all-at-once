@@ -133,3 +133,4 @@ minio/
 mariadb/
 dbt_packages/
 .idea/
+psql/
