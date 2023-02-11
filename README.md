@@ -53,7 +53,7 @@ CREATE TABLE warehouse.bronze.mytable (name varchar, id integer);
 INSERT INTO warehouse.bronze.mytable VALUES ( 'John', 1), ('Jane', 2);
 SELECT * FROM warehouse.bronze.mytable;
 
-CREATE SCHEMA silver;
+CREATE SCHEMA IF NOT EXISTS warehouse.silver WITH (location='s3a://warehouse/silver');
 
 -- https://docs.getdbt.com/reference/resource-properties/external
 -- https://github.com/dbt-labs/dbt-external-tables

@@ -7,6 +7,9 @@ run_silver:
 run_gold:
 	dbt run --project-dir ./gold --profiles-dir ./ --full-refresh
 
+run_all:
+	make run_bronze && make seed && make run_external && make run_silver && make run_gold
+
 run_external:
 	dbt run-operation --project-dir ./silver stage_external_sources
 

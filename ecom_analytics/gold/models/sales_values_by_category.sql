@@ -1,1 +1,2 @@
-SELECT 1+1 AS "data"
+SELECT *
+FROM warehouse.silver.sales_values_by_category
