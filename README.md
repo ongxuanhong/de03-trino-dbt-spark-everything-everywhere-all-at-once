@@ -61,8 +61,11 @@ dbt run-operation stage_external_sources --vars "ext_full_refresh: true"
 # Run DBT
 ```bash
 cd ecom_analytics
-make bronze
-make silver
+make run_bronze
+
+dbt run-operation --project-dir ./silver stage_external_sources
+make run_silver
+
 make gold
 ```
 
