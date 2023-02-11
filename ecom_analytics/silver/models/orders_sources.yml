@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: silver
     tables:
-      - name: external_products
+      - name: olist_products
         external:
           location: 's3a://warehouse/bronze/olist_products'
           using: delta
@@ -26,3 +26,12 @@ sources:
             data_type: int
           - name: product_width_cm
             data_type: int
+      - name: product_category_name_translation
+        external:
+          location: 's3a://warehouse/bronze/product_category_name_translation'
+          using: delta
+        columns:
+          - name: product_category_name
+            data_type: string
+          - name: product_category_name_english
+            data_type: string

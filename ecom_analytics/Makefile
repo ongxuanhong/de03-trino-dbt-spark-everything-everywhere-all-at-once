@@ -5,7 +5,7 @@ run_silver:
 	dbt run --project-dir ./silver --profiles-dir ./ --full-refresh
 
 run_external:
-	dbt run-operation --project-dir ./silver stage_external_sources --args "select: default"
+	dbt run-operation --project-dir ./silver stage_external_sources
 
 install_deps:
 	dbt deps --project-dir ./silver
@@ -14,7 +14,7 @@ seed:
 	dbt seed --project-dir ./bronze --profiles-dir ./ --full-refresh
 	
 docs:
-	dbt docs generate --profiles-dir ./silver && dbt docs serve --profiles-dir ./silver
+	dbt docs generate --project-dir ./silver --profiles-dir ./ && dbt docs serve --port 8081 --project-dir ./silver --profiles-dir ./
 
 select:
 	dbt run --profiles-dir ./silver --select $(script)

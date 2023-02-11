@@ -119,3 +119,4 @@
 2023-02-11 09:59:40.469556 (MainThread): invalid escape sequence '\w'
 2023-02-11 10:00:45.492872 (MainThread): invalid escape sequence '\w'
 2023-02-11 10:00:45.691330 (MainThread): invalid escape sequence '\w'
+2023-02-11 10:12:39.303108 (Thread-1 (worker)): invalid escape sequence '\w'
