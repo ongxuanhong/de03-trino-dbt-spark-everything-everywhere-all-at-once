@@ -33,5 +33,5 @@ models:
   bronze:
     +materialized: incremental
     +incremental_strategy: delete+insert
-    +file_format: parquet
+    +file_format: delta
     +location_root: s3a://warehouse/bronze

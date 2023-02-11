@@ -30,17 +30,20 @@ services:
       - kyuubi_network
 
   hive-metastore:
-    build:
-      context: ./hive-metastore
-      dockerfile: ./Dockerfile
-    container_name: "hive-metastore"    
-    image: hive-metastore:latest
+    container_name: hive-metastore
+    hostname: hive-metastore
+    image: "bitsondatadev/hive-metastore"
     ports:
       - "9083:9083"
+    volumes:
+      - ./hive-metastore/metastore-site.xml:/opt/apache-hive-metastore-3.0.0-bin/conf/metastore-site.xml:ro
+    environment:
+      METASTORE_DB_HOSTNAME: de_mysql
+    networks:
+      - kyuubi_network
     depends_on:
       - de_mysql
-    networks:
-      - kyuubi_network      
+      - minio
 
   trino:
     container_name: trino
@@ -100,10 +103,11 @@ services:
       - "4040:4040"
       - "10000:10000"
     command: sh -c "
-        sleep 10 && ./sbin/start-thriftserver.sh --files /opt/bitnami/spark/conf/hive-site.xml --master spark://spark-master:7077"
+      sleep 10 && ./sbin/start-thriftserver.sh \
+      --driver-java-options '-Dhive.metastore.uris=thrift://hive-metastore:9083 -Dhive.metastore.warehouse.dir=s3a://warehouse' \
+      --master spark://spark-master:7077"
     volumes:
       - ./spark/spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
-      - ./spark/hive-site.xml:/opt/bitnami/spark/conf/hive-site.xml
     networks:
       - kyuubi_network
         
