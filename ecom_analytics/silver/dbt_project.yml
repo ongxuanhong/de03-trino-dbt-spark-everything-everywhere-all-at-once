@@ -36,7 +36,6 @@ models:
     +materialized: incremental
     +incremental_strategy: merge
     +file_format: delta
-    +location_root: s3a://warehouse/silver
     +pre_hook:
       - SET spark.hadoop.fs.s3a.endpoint=http://minio:9000
       - SET spark.hadoop.fs.s3a.access.key=minio
@@ -44,3 +43,7 @@ models:
       - SET spark.hadoop.fs.s3a.path.style.access=true
       - SET spark.hadoop.fs.s3a.connection.ssl.enabled=false
       - SET spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem
+    silver:
+      +location_root: s3a://warehouse/silver
+    gold:
+      +location_root: s3a://warehouse/gold
