@@ -81,3 +81,10 @@ jdbc:hive2://localhost:10009/warehouse;#spark.sql.shuffle.partitions=2;spark.exe
 
 # Trouble shooting
 - https://kb.databricks.com/en_US/metastore/hive-metastore-troubleshooting
+
+# Prepare data PostgreSQL
+```bash
+make to_psql
+
+create database metabaseappdb;
+```

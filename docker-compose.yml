@@ -120,7 +120,17 @@ services:
       - ./spark/spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
     networks:
       - kyuubi_network
-        
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: "metabase"
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    networks:
+      - kyuubi_network
+
 networks:
   kyuubi_network:
     driver: bridge
