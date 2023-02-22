@@ -1,5 +1,11 @@
 # de03-apache-kyuuby
 
+## Prepare infrastructure
+```bash
+make build
+make up
+```
+
 ## Prepare MySQL data
 
 ```sql
