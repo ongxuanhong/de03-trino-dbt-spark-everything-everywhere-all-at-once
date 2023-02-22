@@ -1,10 +1,5 @@
 # de03-apache-kyuuby
 
-## Connection
-```bash
-jdbc:hive2://localhost:10009/default;#spark.sql.shuffle.partitions=2;spark.executor.memory=5g;spark.ui.port=4040;spark.dynamicAllocation.enabled=true;spark.dynamicAllocation.minExecutors=2;spark.dynamicAllocation.initialExecutors=2;spark.executor.instances=2
-```
-
 ## Prepare MySQL data
 
 ```sql
@@ -41,7 +36,16 @@ SELECT * FROM olist_products_dataset LIMIT 10;
 SELECT * FROM product_category_name_translation LIMIT 10;
 ```
 
-# Test delta-table
+
+# Prepare data PostgreSQL
+```bash
+make to_psql
+
+create database metabaseappdb;
+create database ecom_analytics;
+```
+
+# Prepare delta-table on warehouse Data lake
 ```sql
 SHOW catalogs;
 
@@ -67,24 +71,5 @@ make run_bronze
 
 make run_external
 make run_silver
-
-make to_psql
-create database ecom_analytics;
-```
-
-# Spark thrift
-```bash
-jdbc:hive2://localhost:10009/default;#spark.sql.shuffle.partitions=2;spark.executor.memory=5g;spark.dynamicAllocation.enabled=true;spark.dynamicAllocation.minExecutors=2;spark.dynamicAllocation.initialExecutors=2;spark.executor.instances=2;spark.hadoop.hive.metastore.uris=thrift://hive-metastore:9083
-
-jdbc:hive2://localhost:10009/warehouse;#spark.sql.shuffle.partitions=2;spark.executor.memory=5g;spark.dynamicAllocation.enabled=true;spark.dynamicAllocation.minExecutors=2;spark.dynamicAllocation.initialExecutors=2;spark.executor.instances=2
-```
-
-# Trouble shooting
-- https://kb.databricks.com/en_US/metastore/hive-metastore-troubleshooting
-
-# Prepare data PostgreSQL
-```bash
-make to_psql
-
-create database metabaseappdb;
+make run_gold
 ```
