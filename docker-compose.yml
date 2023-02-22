@@ -12,7 +12,7 @@ services:
     env_file:
       - .env
     networks:
-      - kyuubi_network
+      - data_network
 
   de_psql:
     image: postgres:15
@@ -24,7 +24,7 @@ services:
     env_file:
       - .env
     networks:
-      - kyuubi_network
+      - data_network
 
   minio:
     hostname: minio
@@ -39,7 +39,7 @@ services:
     env_file:
       - .env
     networks:
-      - kyuubi_network
+      - data_network
 
   hive-metastore:
     container_name: hive-metastore
@@ -52,7 +52,7 @@ services:
     environment:
       METASTORE_DB_HOSTNAME: de_mysql
     networks:
-      - kyuubi_network
+      - data_network
     depends_on:
       - de_mysql
       - minio
@@ -66,7 +66,7 @@ services:
     volumes:
       - ./trino:/etc/trino
     networks:
-      - kyuubi_network
+      - data_network
 
   spark-master:
     build:
@@ -81,7 +81,7 @@ services:
     volumes:
       - ./spark/spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
     networks:
-      - kyuubi_network
+      - data_network
 
   spark-worker-1:
     image: docker.io/bitnami/spark:3.3
@@ -91,7 +91,7 @@ services:
     depends_on:
       - spark-master
     networks:
-      - kyuubi_network
+      - data_network
 
   spark-worker-2:
     image: docker.io/bitnami/spark:3.3
@@ -101,7 +101,7 @@ services:
     depends_on:
       - spark-master
     networks:
-      - kyuubi_network
+      - data_network
 
   spark-thrift-server:
     build:
@@ -119,7 +119,7 @@ services:
     volumes:
       - ./spark/spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
     networks:
-      - kyuubi_network
+      - data_network
 
   metabase:
     image: metabase/metabase:latest
@@ -129,9 +129,9 @@ services:
     env_file:
       - .env
     networks:
-      - kyuubi_network
+      - data_network
 
 networks:
-  kyuubi_network:
+  data_network:
     driver: bridge
-    name: kyuubi_network
+    name: data_network
