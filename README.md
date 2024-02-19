@@ -1,5 +1,11 @@
 # de03-apache-kyuuby
 
+##  Docs
+
+* DataOps : Trino + DBT + Spark — Everything Everywhere All at Once
+- https://medium.com/@ongxuanhong/dataops-03-trino-dbt-spark-everything-everywhere-all-at-once-241932d27a6
+
+  
 ## Prepare infrastructure
 ```bash
 make build
