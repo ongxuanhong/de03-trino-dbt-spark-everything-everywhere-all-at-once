@@ -84,7 +84,7 @@ services:
       - data_network
 
   spark-worker-1:
-    image: docker.io/bitnami/spark:3.3
+    image: spark:4.0.1-scala2.13-java21-python3-ubuntu
     container_name: "spark-worker-1"
     env_file:
       - .env
@@ -94,7 +94,7 @@ services:
       - data_network
 
   spark-worker-2:
-    image: docker.io/bitnami/spark:3.3
+    image: spark:4.0.1-scala2.13-java21-python3-ubuntu
     container_name: "spark-worker-2"
     env_file:
       - .env
