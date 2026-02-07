@@ -72,52 +72,60 @@ services:
     build:
       context: ./spark
       dockerfile: ./Dockerfile
+    image: de03/spark
     container_name: "spark-master"
+    command: sh -c "/opt/spark/sbin/start-master.sh && tail -f /dev/null"
     environment:
       - SPARK_MODE=master
       - SPARK_LOCAL_IP=spark-master
     ports:
       - "7077:7077"
+      - "8081:8080"
     volumes:
-      - ./spark/spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
+      - ./spark/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
     networks:
       - data_network
 
   spark-worker-1:
-    image: spark:4.0.1-scala2.13-java21-python3-ubuntu
+    image: de03/spark
     container_name: "spark-worker-1"
-    env_file:
-      - .env
+    command: sh -c "/opt/spark/sbin/start-worker.sh spark://spark-master:7077 && tail -f /dev/null"
     depends_on:
       - spark-master
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    volumes:
+      - ./spark/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
     networks:
       - data_network
 
   spark-worker-2:
-    image: spark:4.0.1-scala2.13-java21-python3-ubuntu
+    image: de03/spark
     container_name: "spark-worker-2"
-    env_file:
-      - .env
+    command: sh -c "/opt/spark/sbin/start-worker.sh spark://spark-master:7077 && tail -f /dev/null"
     depends_on:
       - spark-master
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    volumes:
+      - ./spark/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
     networks:
       - data_network
 
   spark-thrift-server:
-    build:
-      context: ./spark
-      dockerfile: ./Dockerfile
+    image: de03/spark
     container_name: "spark-thrift-server"
+    command: sh -c "/opt/spark/sbin/start-thriftserver.sh --driver-java-options '-Dhive.metastore.uris=thrift://hive-metastore:9083' --master spark://spark-master:7077 && tail -f /dev/null"
     depends_on:
       - spark-master
       - hive-metastore
     ports:
       - "4040:4040"
       - "10000:10000"
-    command: sh -c "
-      sleep 10 && ./sbin/start-thriftserver.sh --driver-java-options '-Dhive.metastore.uris=thrift://hive-metastore:9083' --master spark://spark-master:7077"
     volumes:
-      - ./spark/spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
+      - ./spark/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
     networks:
       - data_network
 
