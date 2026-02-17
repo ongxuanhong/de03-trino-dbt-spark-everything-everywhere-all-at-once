@@ -1,0 +1,39 @@
+# Unity Catalog OSS - Java via SDKMAN, clone and run from upstream
+# Refs: https://sdkman.io/install/ , https://docs.unitycatalog.io/quickstart/
+
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install dependencies for SDKMAN and build (bash, curl, git, zip, unzip)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    bash \
+    curl \
+    git \
+    unzip \
+    zip \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install SDKMAN (CI mode for non-interactive use, no shell config changes)
+RUN curl -s "https://get.sdkman.io?ci=true&rcupdate=false" | bash
+
+# Install Java 17 (Temurin) via SDKMAN and set JAVA_HOME
+ENV SDKMAN_DIR="/root/.sdkman"
+RUN bash -c 'set -ex; source "$SDKMAN_DIR/bin/sdkman-init.sh"; sdk install java 17.0.13-tem; sdk default java 17.0.13-tem'
+ENV JAVA_HOME="${SDKMAN_DIR}/candidates/java/17.0.13-tem"
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
+
+# Clone Unity Catalog OSS (HTTPS for Docker builds; no SSH keys required)
+ARG UC_DIR="/app/unitycatalog"
+WORKDIR /app
+RUN git clone https://github.com/unitycatalog/unitycatalog.git
+WORKDIR ${UC_DIR}
+
+# Build the project so start-uc-server can run without compiling at startup
+RUN ./build/sbt -info clean package
+
+EXPOSE 8080
+
+# Start Unity Catalog server on port 8080 (default is 8080; explicit for clarity)
+CMD ["./bin/start-uc-server", "-port", "8080"]

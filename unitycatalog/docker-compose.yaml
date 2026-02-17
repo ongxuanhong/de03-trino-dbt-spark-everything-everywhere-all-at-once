@@ -1,0 +1,10 @@
+name: unitycatalog
+
+services:
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.UC.OSS
+    ports:
+      - "8080:8080"
