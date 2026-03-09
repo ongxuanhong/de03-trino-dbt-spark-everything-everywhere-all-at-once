@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: cdc_streaming
+    tables:
+      - name: customers_raw
+        external:
+          location: 's3://dev-asia-vn-bronze/event_streaming/customers'
+          using: delta
+        columns:
+          - name: payload
+            data_type: string
